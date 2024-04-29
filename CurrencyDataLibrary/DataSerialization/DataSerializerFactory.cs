@@ -2,7 +2,7 @@
 {
     public class DataSerializerFactory
     {
-        public IDataSerializer GetSerializer(string format)
+        public static IDataSerializer GetSerializer(string format)
         {
             return format switch
             {

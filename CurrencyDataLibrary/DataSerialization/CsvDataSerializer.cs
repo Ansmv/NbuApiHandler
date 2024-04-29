@@ -1,5 +1,5 @@
-﻿using System.Text;
-using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.Models;
+using System.Text;
 
 namespace CurrencyDataLibrary.DataSerialization
 {
@@ -19,7 +19,7 @@ namespace CurrencyDataLibrary.DataSerialization
             }
             return sb.ToString();
         }
-        private string ToCsvString(CurrencyData currencyData)
+        private static string ToCsvString(CurrencyData currencyData)
         {
             string[] result = [
                 currencyData.Id.ToString(),
