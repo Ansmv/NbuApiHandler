@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary
+﻿using CurrencyDataLibrary.Models;
+
+namespace CurrencyDataLibrary.DataSerialization
 {
     public interface IDataSerializer
     {

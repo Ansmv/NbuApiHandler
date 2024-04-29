@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace CurrencyDataLibrary
+namespace CurrencyDataLibrary.ApiCommunication
 {
     public class JsonFetcher : IJsonFetcher
     {

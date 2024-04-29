@@ -1,6 +1,7 @@
 ﻿using System.Text;
+using CurrencyDataLibrary.Models;
 
-namespace CurrencyDataLibrary
+namespace CurrencyDataLibrary.DataSerialization
 {
     public class CsvDataSerializer : IDataSerializer
     {

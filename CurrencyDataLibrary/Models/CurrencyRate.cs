@@ -1,4 +1,4 @@
-﻿namespace CurrencyDataLibrary
+﻿namespace CurrencyDataLibrary.Models
 {
     public class CurrencyData
     {

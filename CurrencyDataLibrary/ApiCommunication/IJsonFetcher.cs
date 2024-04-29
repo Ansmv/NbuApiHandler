@@ -1,4 +1,4 @@
-﻿namespace CurrencyDataLibrary
+﻿namespace CurrencyDataLibrary.ApiCommunication
 {
     public interface IJsonFetcher
     {

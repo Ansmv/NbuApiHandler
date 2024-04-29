@@ -1,4 +1,4 @@
-﻿namespace CurrencyDataLibrary
+﻿namespace CurrencyDataLibrary.DataSerialization
 {
     public interface IDataSerializerFactory
     {

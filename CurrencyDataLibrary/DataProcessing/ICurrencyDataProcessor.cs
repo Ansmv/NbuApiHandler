@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary
+﻿using CurrencyDataLibrary.Models;
+
+namespace CurrencyDataLibrary.DataProcessing
 {
     public interface ICurrencyDataProcessor
     {

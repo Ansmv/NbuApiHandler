@@ -1,7 +1,8 @@
-﻿using System.Diagnostics;
+﻿using CurrencyDataLibrary.Models;
+using System.Diagnostics;
 using System.Text.Json;
 
-namespace CurrencyDataLibrary
+namespace CurrencyDataLibrary.DataProcessing
 {
     public class CurrencyDataProcessor : ICurrencyDataProcessor
     {

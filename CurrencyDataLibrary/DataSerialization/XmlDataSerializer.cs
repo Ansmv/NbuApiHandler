@@ -1,7 +1,8 @@
 ﻿using System.Text;
 using System.Xml.Serialization;
+using CurrencyDataLibrary.Models;
 
-namespace CurrencyDataLibrary
+namespace CurrencyDataLibrary.DataSerialization
 {
     public class XmlDataSerializer : IDataSerializer
     {

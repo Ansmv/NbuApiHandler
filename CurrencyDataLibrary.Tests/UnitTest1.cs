@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary.Tests
+﻿using CurrencyDataLibrary.Models;
+
+namespace CurrencyDataLibrary.Tests
 {
     [TestClass]
     public class JsonFetcherTest
