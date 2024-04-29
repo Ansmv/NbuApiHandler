@@ -5,6 +5,8 @@ namespace CurrencyDataLibrary.DataSerialization
 {
     public class CsvDataSerializer : IDataSerializer
     {
+        public string FileExtension => ".csv";
+
         public CsvDataSerializer()
         {
         }
