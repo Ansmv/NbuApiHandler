@@ -8,4 +8,4 @@ namespace CurrencyDataLibrary.DataSerialization
         string FileExtension { get; }
     }
 }
-}
+
