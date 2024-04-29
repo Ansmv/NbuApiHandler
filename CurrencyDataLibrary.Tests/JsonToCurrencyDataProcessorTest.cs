@@ -1,14 +1,15 @@
-﻿using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.ApiCommunication;
+using CurrencyDataLibrary.Models;
 
 namespace CurrencyDataLibrary.Tests
 {
     [TestClass]
-    public class JsonFetcherTest
+    public class JsonToCurrencyDataProcessorTest
     {
         [TestMethod]
         public void FetchCurrencyData_ReturnsCurrencyData()
         {
-            var processor = new CurrencyDataProcessor();
+            var processor = new JsonToCurrencyDataProcessor();
             string validJson = @"[
               {
                 ""r030"": 36,
@@ -45,4 +46,5 @@ namespace CurrencyDataLibrary.Tests
             Assert.AreEqual(new DateTime(2024, 04, 29), result[1].Timestamp);
         }
     }
+
 }
