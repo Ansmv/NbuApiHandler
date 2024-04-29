@@ -1,5 +1,4 @@
-﻿using CurrencyDataLibrary.DataProcessing;
-using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.Models;
 using System.Diagnostics;
 
 namespace CurrencyDataLibrary.ApiCommunication
@@ -7,8 +6,8 @@ namespace CurrencyDataLibrary.ApiCommunication
     public class CurrencyAPIClient
     {
         private readonly IJsonFetcher _jsonFetcher;
-        private readonly ICurrencyDataProcessor _currencyDataProcessor;
-        public CurrencyAPIClient(IJsonFetcher jsonFetcher, ICurrencyDataProcessor currencyDataProcessor)
+        private readonly IJsonToCurrencyDataProcessor _currencyDataProcessor;
+        public CurrencyAPIClient(IJsonFetcher jsonFetcher, IJsonToCurrencyDataProcessor currencyDataProcessor)
         {
             _jsonFetcher = jsonFetcher ?? throw new ArgumentNullException(nameof(jsonFetcher));
             _currencyDataProcessor = currencyDataProcessor ?? throw new ArgumentNullException(nameof(currencyDataProcessor));
