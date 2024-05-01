@@ -22,15 +22,10 @@ JsonFetcher jsonFetcher = new(
 JsonToCurrencyDataProcessor processor = new();
 CurrencyAPIClient currencyAPIClient = new(jsonFetcher, processor);
 
-for (int i = 0; i < 60; i++) // 60 iterations for 5 minutes
+while (true)
 {
     List<CurrencyData> currencyData = await currencyAPIClient.FetchCurrencyData();
-    Console.WriteLine($"Successfully fetched: {currencyData.Count} currencies");
-
     DataSaver.SaveToFile(currencyData, dataFormat, dataStoragePath);
-    Console.WriteLine("Saved to a file");
-
-    await Task.Delay(delayInSeconds * 1000); // Delay for 5 seconds before next iteration
+    await Task.Delay(delayInSeconds * 1000);
 }
 
-Console.WriteLine("Testing complete.");
