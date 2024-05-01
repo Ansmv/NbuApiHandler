@@ -1,6 +1,6 @@
 ﻿namespace NbuApiHandler
 {
-    partial class Service1
+    partial class CurrencyService
     {
         /// <summary> 
         /// Required designer variable.

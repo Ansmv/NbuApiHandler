@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbuApiHandler", "NbuApiHandler.csproj", "{0F42C18A-AF44-49E4-8B3A-7FEFB891F507}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary", "..\CurrencyDataLibrary\CurrencyDataLibrary.csproj", "{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary.Tests", "..\CurrencyDataLibrary.Tests\CurrencyDataLibrary.Tests.csproj", "{05ECF65C-EFE7-423E-9739-7E1028D4248F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbuApiCheck", "..\NbuApiCheck\NbuApiCheck.csproj", "{730A85CC-8D7D-4579-8067-F29C531AC351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NbuApiCheck", "..\NbuApiCheck\NbuApiCheck.csproj", "{730A85CC-8D7D-4579-8067-F29C531AC351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyDataWorkerService", "..\CurrencyDataWorkerService\CurrencyDataWorkerService.csproj", "{4ED56924-3D49-4E77-8E17-6C76D3928AD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F42C18A-AF44-49E4-8B3A-7FEFB891F507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F42C18A-AF44-49E4-8B3A-7FEFB891F507}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F42C18A-AF44-49E4-8B3A-7FEFB891F507}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F42C18A-AF44-49E4-8B3A-7FEFB891F507}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{730A85CC-8D7D-4579-8067-F29C531AC351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{730A85CC-8D7D-4579-8067-F29C531AC351}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{730A85CC-8D7D-4579-8067-F29C531AC351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED56924-3D49-4E77-8E17-6C76D3928AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED56924-3D49-4E77-8E17-6C76D3928AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED56924-3D49-4E77-8E17-6C76D3928AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED56924-3D49-4E77-8E17-6C76D3928AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
