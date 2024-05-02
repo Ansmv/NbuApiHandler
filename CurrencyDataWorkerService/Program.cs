@@ -1,28 +1,20 @@
 using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataWorkerService;
-using Microsoft.Extensions.Options;
+
+IConfiguration config = ConfigExtensions.LoadConfiguration(Directory.GetCurrentDirectory(), "appsettings.json");
 
 var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
-var configBuilder = new ConfigurationBuilder();
-configBuilder.SetBasePath(Directory.GetCurrentDirectory())
-   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-IConfiguration config = configBuilder.Build();
+builder.Services.AddWindowsService();
 builder.Services.Configure<AppSettings>(config.GetSection("AppSettings"));
 builder.Services.Configure<CurrencyApiSettings>(config.GetSection("CurrencyApiSettings"));
-builder.Services.AddTransient<IJsonFetcher, JsonFetcher>((provider) =>
-{
-    var currencyApiSettings = provider.GetRequiredService<IOptionsMonitor<CurrencyApiSettings>>().CurrentValue;
-    return new(
-               new HttpClientWrapper(),
-               new CacheManager<string>(
-                   new TimeSpan(0, 10, 0)
-               ),
-               currencyApiSettings.ApiUrl
-           );
-});
-builder.Services.AddTransient<IJsonToCurrencyDataProcessor, JsonToCurrencyDataProcessor>();
-builder.Services.AddTransient<CurrencyAPIClient>();
+
+builder.Services
+    .AddJsonFetcherService()
+    .AddTransient<IJsonToCurrencyDataProcessor, JsonToCurrencyDataProcessor>()
+    .AddTransient<CurrencyAPIClient>()
+    .AddDataSaver();
+
+builder.Services.AddHostedService<CurrencyApiHandler>();
 
 var host = builder.Build();
 host.Run();
