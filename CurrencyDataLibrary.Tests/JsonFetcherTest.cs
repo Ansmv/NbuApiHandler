@@ -10,7 +10,7 @@ namespace CurrencyDataLibrary.Tests
         {
             var mockHttpClient = new MockHttpClientWrapper();
             var mockCacheManager = new MockCacheManager();
-            var jsonFetcher = new JsonFetcher(mockHttpClient, mockCacheManager);
+            var jsonFetcher = new JsonFetcher(mockHttpClient, mockCacheManager, "https:\\dummy.com");
             string json = await jsonFetcher.FetchJsonFromApi();
             Assert.IsNotNull(json);
             Assert.AreEqual("Mock JSON Response", json);
