@@ -18,6 +18,7 @@ namespace CurrencyDataLibrary.DataSaving
             string fileExtension = serializer.FileExtension;
 
             string fullPath = _pathHandler.GetFullPath(folderPath, fileExtension);
+            folderPath = Path.GetDirectoryName(fullPath);
             EnsureDirectoryExists(folderPath);
             File.WriteAllText(fullPath, serializedData);
         }
