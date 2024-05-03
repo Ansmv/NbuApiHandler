@@ -1,10 +1,14 @@
 using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataWorkerService;
 
-IConfiguration config = ConfigExtensions.LoadConfiguration(Directory.GetCurrentDirectory(), "appsettings.json");
+IConfiguration config = ConfigExtensions.LoadConfiguration(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
 
 var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddWindowsService();
+builder.Services.AddWindowsService(options =>
+{
+    options.ServiceName = "Joker Service for Stupid";
+});
+//builder.Logging.ClearProviders();
 builder.Services.Configure<AppSettings>(config.GetSection("AppSettings"));
 builder.Services.Configure<CurrencyApiSettings>(config.GetSection("CurrencyApiSettings"));
 
