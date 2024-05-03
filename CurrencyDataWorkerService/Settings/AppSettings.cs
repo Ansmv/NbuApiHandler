@@ -1,4 +1,4 @@
-﻿namespace CurrencyDataWorkerService
+﻿namespace CurrencyDataWorkerService.Settings
 {
     public class AppSettings
     {

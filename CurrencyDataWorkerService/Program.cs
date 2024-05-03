@@ -1,5 +1,7 @@
 using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataWorkerService;
+using CurrencyDataWorkerService.Extensions;
+using CurrencyDataWorkerService.Settings;
 
 IConfiguration config = ConfigExtensions.LoadConfiguration(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
 

@@ -1,6 +1,7 @@
 using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataLibrary.DataSaving;
 using CurrencyDataLibrary.Models;
+using CurrencyDataWorkerService.Settings;
 using Microsoft.Extensions.Options;
 
 namespace CurrencyDataWorkerService
