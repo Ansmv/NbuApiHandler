@@ -8,6 +8,7 @@ namespace CurrencyDataWorkerService.Extensions
     public static class ServiceCollectionExtensions
     {
         private const int CacheDurationMinutes = 10;
+
         public static IServiceCollection AddJsonFetcherService(this IServiceCollection services)
         {
 
@@ -16,7 +17,6 @@ namespace CurrencyDataWorkerService.Extensions
             {
                 return new CacheManager<string>(TimeSpan.FromMinutes(CacheDurationMinutes));
             });
-
             services.AddTransient<IJsonFetcher, JsonFetcher>(provider =>
             {
                 var httpClientWrapper = provider.GetRequiredService<IHttpClientWrapper>();
@@ -31,6 +31,7 @@ namespace CurrencyDataWorkerService.Extensions
             });
             return services;
         }
+
         public static IServiceCollection AddDataSaver(this IServiceCollection services)
         {
             services.AddSingleton<ISystemClock, SystemClock>();
@@ -40,6 +41,5 @@ namespace CurrencyDataWorkerService.Extensions
             //services.AddSingleton<IDataSaver, UpdateExistingFileDataSaver>();
             return services;
         }
-
     }
 }

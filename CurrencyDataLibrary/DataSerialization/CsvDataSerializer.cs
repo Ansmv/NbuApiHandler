@@ -19,6 +19,7 @@ namespace CurrencyDataLibrary.DataSerialization
             }
             return sb.ToString();
         }
+
         private static string ToCsvString(CurrencyData currencyData)
         {
             string[] result = [
@@ -36,5 +37,4 @@ namespace CurrencyDataLibrary.DataSerialization
             return ".csv";
         }
     }
-
 }

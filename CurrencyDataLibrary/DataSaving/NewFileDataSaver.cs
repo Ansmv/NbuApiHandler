@@ -11,6 +11,7 @@ namespace CurrencyDataLibrary.DataSaving
         {
             _pathHandler = pathHandler;
         }
+
         public void SaveToFile(List<CurrencyData> currencyData, string format, string folderPath)
         {
             IDataSerializer serializer = DataSerializerFactory.GetSerializer(format);
@@ -22,6 +23,7 @@ namespace CurrencyDataLibrary.DataSaving
             EnsureDirectoryExists(folderPath);
             File.WriteAllText(fullPath, serializedData);
         }
+
         private static void EnsureDirectoryExists(string directoryPath)
         {
             if (!Directory.Exists(directoryPath))

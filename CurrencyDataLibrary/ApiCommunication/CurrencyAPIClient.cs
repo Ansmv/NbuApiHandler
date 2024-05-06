@@ -7,11 +7,13 @@ namespace CurrencyDataLibrary.ApiCommunication
     {
         private readonly IJsonFetcher _jsonFetcher;
         private readonly IJsonToCurrencyDataProcessor _currencyDataProcessor;
+
         public CurrencyAPIClient(IJsonFetcher jsonFetcher, IJsonToCurrencyDataProcessor currencyDataProcessor)
         {
             _jsonFetcher = jsonFetcher ?? throw new ArgumentNullException(nameof(jsonFetcher));
             _currencyDataProcessor = currencyDataProcessor ?? throw new ArgumentNullException(nameof(currencyDataProcessor));
         }
+
         public async Task<List<CurrencyData>> FetchCurrencyData()
         {
             try

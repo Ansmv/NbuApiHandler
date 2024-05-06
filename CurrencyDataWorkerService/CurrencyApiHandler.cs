@@ -15,6 +15,7 @@ namespace CurrencyDataWorkerService
         private string? _dataStoragePath;
         private readonly IOptionsMonitor<AppSettings> _appSettingsMonitor;
         private readonly IDataSaver _dataSaver;
+
         public CurrencyApiHandler(
             ILogger<CurrencyApiHandler> logger,
             CurrencyAPIClient currencyAPIClient,
@@ -28,6 +29,7 @@ namespace CurrencyDataWorkerService
             UpdateConfig();
             _appSettingsMonitor.OnChange(_ => UpdateConfig());
         }
+
         private void UpdateConfig()
         {
             var appSettings = _appSettingsMonitor.CurrentValue;

@@ -3,10 +3,12 @@
     public class PathHandler : IPathHandler
     {
         private readonly IFileNameGenerator _fileNameGenerator;
+
         public PathHandler(IFileNameGenerator fileNameGenerator)
         {
             _fileNameGenerator = fileNameGenerator;
         }
+
         public string GetFullPath(string filePath, string fileExtension)
         {
             var fullFileName = _fileNameGenerator.GenerateFileName(fileExtension);

@@ -3,6 +3,7 @@
     public class FileNameGenerator : IFileNameGenerator
     {
         private readonly ISystemClock _clock;
+
         public FileNameGenerator(ISystemClock clock)
         {
             _clock = clock;
@@ -12,6 +13,7 @@
         {
             return $"{_clock.UtcNow:yyyy-MM-dd_HH-mm-ss}_{GetFileDescription(fileExtension)}{fileExtension}";
         }
+
         private static string GetFileDescription(string format)
         {
             return format switch

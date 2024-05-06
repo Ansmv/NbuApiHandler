@@ -6,14 +6,15 @@ namespace CurrencyDataLibrary.ApiCommunication
     {
         private readonly IHttpClientWrapper _httpClient;
         private readonly ICacheManager<string> _cacheManager;
-
         private readonly string _apiEndpoint;
+
         public JsonFetcher(IHttpClientWrapper httpClient, ICacheManager<string> cacheManager, string apiEndpoint)
         {
             _httpClient = httpClient;
             _cacheManager = cacheManager;
             _apiEndpoint = apiEndpoint;
         }
+
         public async Task<string> FetchJsonFromApi()
         {
             return await _cacheManager.GetOrAdd(_apiEndpoint, FetchJsonFromApiAsync);
