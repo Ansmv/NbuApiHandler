@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary", "..\CurrencyDataLibrary\CurrencyDataLibrary.csproj", "{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary", "CurrencyDataLibrary\CurrencyDataLibrary.csproj", "{E6BEB8F6-7569-4186-8C26-C8EA4FBC1F5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary.Tests", "..\CurrencyDataLibrary.Tests\CurrencyDataLibrary.Tests.csproj", "{05ECF65C-EFE7-423E-9739-7E1028D4248F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataLibrary.Tests", "CurrencyDataLibrary.Tests\CurrencyDataLibrary.Tests.csproj", "{05ECF65C-EFE7-423E-9739-7E1028D4248F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataWorkerService", "CurrencyDataWorkerService.csproj", "{4ED56924-3D49-4E77-8E17-6C76D3928AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyDataWorkerService", "CurrencyDataWorkerService\CurrencyDataWorkerService.csproj", "{4ED56924-3D49-4E77-8E17-6C76D3928AD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
