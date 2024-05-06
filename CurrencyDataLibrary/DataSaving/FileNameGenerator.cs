@@ -18,9 +18,9 @@
         {
             return format switch
             {
-                ".csv" => "currency_data",
-                ".json" => "currency_data",
-                ".xml" => "currency_data",
+                ".csv" => "csv_currency_data",
+                ".json" => "json_currency_data",
+                ".xml" => "xml_currency_data",
                 _ => throw new NotImplementedException()
             };
         }
