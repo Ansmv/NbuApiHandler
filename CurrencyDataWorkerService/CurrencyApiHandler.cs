@@ -15,7 +15,11 @@ namespace CurrencyDataWorkerService
         private string? _dataStoragePath;
         private readonly IOptionsMonitor<AppSettings> _appSettingsMonitor;
         private readonly IDataSaver _dataSaver;
-        public CurrencyApiHandler(ILogger<CurrencyApiHandler> logger, CurrencyAPIClient currencyAPIClient, IOptionsMonitor<AppSettings> appSettingsMonitor, IDataSaver dataSaver)
+        public CurrencyApiHandler(
+            ILogger<CurrencyApiHandler> logger,
+            CurrencyAPIClient currencyAPIClient,
+            IOptionsMonitor<AppSettings> appSettingsMonitor,
+            IDataSaver dataSaver)
         {
             _logger = logger;
             _currencyAPIClient = currencyAPIClient;
@@ -27,16 +31,11 @@ namespace CurrencyDataWorkerService
         private void UpdateConfig()
         {
             var appSettings = _appSettingsMonitor.CurrentValue;
-            if (appSettings.DelayInSeconds < 5)
-            {
-                _delayInSeconds = 5;
-            }
-            else
-            {
-                _delayInSeconds = appSettings.DelayInSeconds;
-            }
-            _dataFormat = appSettings.DataFormat ?? throw new ArgumentNullException(nameof(appSettings.DataFormat));
-            _dataStoragePath = appSettings.DataStoragePath ?? throw new ArgumentNullException(nameof(appSettings.DataStoragePath));
+            _delayInSeconds = Math.Max(5, appSettings.DelayInSeconds);
+            _dataFormat = appSettings.DataFormat
+                ?? throw new ArgumentNullException(nameof(appSettings.DataFormat));
+            _dataStoragePath = appSettings.DataStoragePath
+                ?? throw new ArgumentNullException(nameof(appSettings.DataStoragePath));
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

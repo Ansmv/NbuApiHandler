@@ -37,6 +37,7 @@ namespace CurrencyDataWorkerService.Extensions
             services.AddSingleton<IFileNameGenerator, FileNameGenerator>();
             services.AddSingleton<IPathHandler, PathHandler>();
             services.AddSingleton<IDataSaver, DataSaver>();
+            //services.AddSingleton<IDataSaver, UpdateExistingFileDataSaver>();
             return services;
         }
 

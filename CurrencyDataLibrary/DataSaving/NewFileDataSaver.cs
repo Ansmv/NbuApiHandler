@@ -3,11 +3,11 @@ using CurrencyDataLibrary.Models;
 
 namespace CurrencyDataLibrary.DataSaving
 {
-    public class DataSaver : IDataSaver
+    public class NewFileDataSaver : IDataSaver
     {
         private readonly IPathHandler _pathHandler;
 
-        public DataSaver(IPathHandler pathHandler)
+        public NewFileDataSaver(IPathHandler pathHandler)
         {
             _pathHandler = pathHandler;
         }
