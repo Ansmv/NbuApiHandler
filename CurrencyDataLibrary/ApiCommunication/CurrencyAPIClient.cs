@@ -11,7 +11,8 @@ namespace CurrencyDataLibrary.ApiCommunication
         public CurrencyAPIClient(IJsonFetcher jsonFetcher, IJsonToCurrencyDataProcessor currencyDataProcessor)
         {
             _jsonFetcher = jsonFetcher ?? throw new ArgumentNullException(nameof(jsonFetcher));
-            _currencyDataProcessor = currencyDataProcessor ?? throw new ArgumentNullException(nameof(currencyDataProcessor));
+            _currencyDataProcessor = currencyDataProcessor
+                ?? throw new ArgumentNullException(nameof(currencyDataProcessor));
         }
 
         public async Task<List<CurrencyData>> FetchCurrencyData()

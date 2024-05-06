@@ -6,6 +6,12 @@ namespace CurrencyDataLibrary.ApiCommunication
 {
     public class JsonToCurrencyDataProcessor : IJsonToCurrencyDataProcessor
     {
+        private const string IdPropertyName = "r030";
+        private const string CurrencyCodePropertyName = "cc";
+        private const string FullNamePropertyName = "txt";
+        private const string RatePropertyName = "rate";
+        private const string ExchangeDatePropertyName = "exchangedate";
+
         public List<CurrencyData> ProcessJson(string json)
         {
             var currencyDataList = new List<CurrencyData>();
@@ -16,11 +22,11 @@ namespace CurrencyDataLibrary.ApiCommunication
                 {
                     var currencyData = new CurrencyData
                     {
-                        Id = jsonCurrency.GetProperty("r030").GetInt32(),
-                        CurrencyCode = jsonCurrency.GetProperty("cc").GetString(),
-                        FullName = jsonCurrency.GetProperty("txt").GetString(),
-                        Rate = (decimal)jsonCurrency.GetProperty("rate").GetDouble(),
-                        Timestamp = DateTime.Parse(jsonCurrency.GetProperty("exchangedate").GetString())
+                        Id = jsonCurrency.GetProperty(IdPropertyName).GetInt32(),
+                        CurrencyCode = jsonCurrency.GetProperty(CurrencyCodePropertyName).GetString(),
+                        FullName = jsonCurrency.GetProperty(FullNamePropertyName).GetString(),
+                        Rate = (decimal)jsonCurrency.GetProperty(RatePropertyName).GetDouble(),
+                        Timestamp = DateTime.Parse(jsonCurrency.GetProperty(ExchangeDatePropertyName).GetString())
                     };
                     currencyDataList.Add(currencyData);
                 }
