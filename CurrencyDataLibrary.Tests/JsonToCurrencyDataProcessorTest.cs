@@ -6,11 +6,8 @@ namespace CurrencyDataLibrary.Tests
     [TestClass]
     public class JsonToCurrencyDataProcessorTest
     {
-        [TestMethod]
-        public void FetchCurrencyData_ReturnsCurrencyData()
-        {
-            var processor = new JsonToCurrencyDataProcessor();
-            string validJson = @"[
+        private readonly string validJson =
+        @"[
               {
                 ""r030"": 36,
                 ""txt"": ""Австралійський долар"",
@@ -25,26 +22,43 @@ namespace CurrencyDataLibrary.Tests
                 ""cc"": ""CNY"",
                 ""exchangedate"": ""29.04.2024""
               }
-            ]";
-            List<CurrencyData> result = processor.ProcessJson(validJson);
+        ]";
 
+        private List<CurrencyData> expectedCurrencyData =
+        [
+            new() {
+                Id = 36,
+                CurrencyCode = "AUD",
+                FullName = "Австралійський долар",
+                Rate = 25.8816m,
+                Timestamp = new DateTime(2024, 04, 29)
+            },
+            new() {
+                Id = 156,
+                CurrencyCode = "CNY",
+                FullName = "Юань Женьміньбі",
+                Rate = 5.4649m,
+                Timestamp = new DateTime(2024, 04, 29)
+            }
+        ];
+
+        [TestMethod]
+        public void FetchCurrencyDataReturnsCurrencyData()
+        {
+            var processor = new JsonToCurrencyDataProcessor();
+            List<CurrencyData> result = processor.ProcessJson(validJson);
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
-
+            Assert.AreEqual(expectedCurrencyData.Count, result.Count);
             // Check the content of first currency data
-            Assert.AreEqual(36, result[0].Id);
-            Assert.AreEqual("AUD", result[0].CurrencyCode);
-            Assert.AreEqual("Австралійський долар", result[0].FullName);
-            Assert.AreEqual(25.8816m, result[0].Rate);
-            Assert.AreEqual(new DateTime(2024, 04, 29), result[0].Timestamp);
-
-            Assert.AreEqual(156, result[1].Id);
-            Assert.AreEqual("CNY", result[1].CurrencyCode);
-            Assert.AreEqual("Юань Женьміньбі", result[1].FullName);
-            Assert.AreEqual(5.4649m, result[1].Rate);
-            Assert.AreEqual(new DateTime(2024, 04, 29), result[1].Timestamp);
+            for (int i = 0; i < expectedCurrencyData.Count; i++)
+            {
+                Assert.AreEqual(expectedCurrencyData[i].Id, result[i].Id);
+                Assert.AreEqual(expectedCurrencyData[i].CurrencyCode, result[i].CurrencyCode);
+                Assert.AreEqual(expectedCurrencyData[i].FullName, result[i].FullName);
+                Assert.AreEqual(expectedCurrencyData[i].Rate, result[i].Rate);
+                Assert.AreEqual(expectedCurrencyData[i].Timestamp, result[i].Timestamp);
+            }
         }
     }
-
 }
