@@ -7,7 +7,7 @@ namespace CurrencyDataLibrary.Tests
     public class FileNameGeneratorTests
     {
         [TestMethod]
-        public void GenerateFileName_ReturnsCorrectFormat()
+        public void GenerateFileNameReturnsCorrectFormat()
         {
             var mockClock = new Mock<ISystemClock>();
             var datetime = new DateTime(2024, 5, 2, 12, 0, 0);
@@ -23,7 +23,7 @@ namespace CurrencyDataLibrary.Tests
             Assert.AreEqual("2024-05-02_12-00-00_currency_data.xml", resultXml);
         }
         [TestMethod]
-        public void GenerateFileName_ThrowsExceptionForUnknownFormat()
+        public void GenerateFileNameThrowsExceptionForUnknownFormat()
         {
             var mockClock = new Mock<ISystemClock>();
             var dateTime = new DateTime(2024, 5, 2, 12, 0, 0);

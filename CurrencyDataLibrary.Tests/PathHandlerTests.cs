@@ -27,7 +27,7 @@ namespace CurrencyDataLibrary.Tests
         }
 
         [TestMethod]
-        public void GetFullPath_WhenGivenAbsolutePath_ReturnsFullPathWithMockedFileName()
+        public void GetFullPath_WhenGivenAbsolutePathReturnsFullPathWithMockedFileName()
         {
             string fullPath = _pathHandler.GetFullPath(TestFilePath, TestFileExtension);
             Assert.AreEqual(Path.Combine(TestFilePath, MockFileName), fullPath);
