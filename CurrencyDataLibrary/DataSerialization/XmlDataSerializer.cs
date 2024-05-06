@@ -6,7 +6,10 @@ namespace CurrencyDataLibrary.DataSerialization
 {
     public class XmlDataSerializer : IDataSerializer
     {
-        public string FileExtension => ".xml";
+        public string GetFileExtension()
+        {
+            return ".xml";
+        }
 
         public string Serialize(List<CurrencyData> currencyData)
         {

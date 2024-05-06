@@ -15,7 +15,7 @@ namespace CurrencyDataLibrary.DataSaving
         {
             IDataSerializer serializer = DataSerializerFactory.GetSerializer(format);
             string serializedData = serializer.Serialize(currencyData);
-            string fileExtension = serializer.FileExtension;
+            string fileExtension = serializer.GetFileExtension();
 
             string fullPath = _pathHandler.GetFullPath(folderPath, fileExtension);
             folderPath = Path.GetDirectoryName(fullPath);

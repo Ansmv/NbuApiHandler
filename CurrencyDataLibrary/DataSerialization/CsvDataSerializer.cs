@@ -5,8 +5,6 @@ namespace CurrencyDataLibrary.DataSerialization
 {
     public class CsvDataSerializer : IDataSerializer
     {
-        public string FileExtension => ".csv";
-
         public CsvDataSerializer()
         {
         }
@@ -31,6 +29,11 @@ namespace CurrencyDataLibrary.DataSerialization
                 currencyData.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")
                 ];
             return string.Join(",", result);
+        }
+
+        public string GetFileExtension()
+        {
+            return ".csv";
         }
     }
 
