@@ -33,8 +33,8 @@ The Currency Data API Handler uses a configuration file (`appsettings.json`) to 
   - `DataFormat`: The desired format for saving the currency data (csv, json, xml).
   - `DataStoragePath`: You can chose both relative to the exe path as well as an absolute path.
 If the folder does not exist the app will create it if it has the rights.
-  - "CreateNewFile": Reserved for the new feature of chosing either create new file every fetch or update existing one
-(currently supports only creating new files).
+  - "DataSaverType": "SingleFile" - to create new file every fetch or  
+                     "MultipleFiles" - to update existing one
 
 - **CurrencyApiSettings**: Configuration related to the external Currency API.
   - `ApiUrl`: The base URL of the Currency API (Currently has a support for only the NBU API).
