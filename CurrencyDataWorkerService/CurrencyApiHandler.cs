@@ -1,6 +1,7 @@
 using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataLibrary.DataSaving;
 using CurrencyDataLibrary.Models;
+using CurrencyDataWorkerService.DataSaving;
 using CurrencyDataWorkerService.Settings;
 using Microsoft.Extensions.Options;
 
@@ -13,19 +14,21 @@ namespace CurrencyDataWorkerService
         private int _delayInSeconds;
         private string? _dataFormat;
         private string? _dataStoragePath;
+        private string? _dataSaverType;
         private readonly IOptionsMonitor<AppSettings> _appSettingsMonitor;
-        private readonly IDataSaver _dataSaver;
+        private readonly IDataSaverFactory _dataSaverFactory;
+        private IDataSaver _dataSaver;
 
         public CurrencyApiHandler(
             ILogger<CurrencyApiHandler> logger,
             CurrencyAPIClient currencyAPIClient,
             IOptionsMonitor<AppSettings> appSettingsMonitor,
-            IDataSaver dataSaver)
+            IDataSaverFactory dataSaverFactory)
         {
             _logger = logger;
             _currencyAPIClient = currencyAPIClient;
-            _dataSaver = dataSaver;
             _appSettingsMonitor = appSettingsMonitor;
+            _dataSaverFactory = dataSaverFactory;
             UpdateConfig();
             _appSettingsMonitor.OnChange(_ => UpdateConfig());
         }
@@ -38,6 +41,9 @@ namespace CurrencyDataWorkerService
                 ?? throw new ArgumentNullException(nameof(appSettings.DataFormat));
             _dataStoragePath = appSettings.DataStoragePath
                 ?? throw new ArgumentNullException(nameof(appSettings.DataStoragePath));
+            _dataSaverType = appSettings.DataSaverType
+                ?? throw new ArgumentNullException(nameof(appSettings.DataSaverType));
+            _dataSaver = _dataSaverFactory.CreateDataSaver(_dataSaverType);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

@@ -20,16 +20,8 @@ namespace CurrencyDataLibrary.DataSaving
 
             string fullPath = _pathHandler.GetFullPath(folderPath, fileExtension);
             folderPath = Path.GetDirectoryName(fullPath);
-            EnsureDirectoryExists(folderPath);
+            _pathHandler.EnsureDirectoryExists(folderPath);
             File.WriteAllText(fullPath, serializedData);
-        }
-
-        private static void EnsureDirectoryExists(string directoryPath)
-        {
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
         }
     }
 }

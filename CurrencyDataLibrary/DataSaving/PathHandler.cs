@@ -19,5 +19,13 @@
             }
             return Path.Combine(filePath, fullFileName);
         }
+
+        public void EnsureDirectoryExists(string directoryPath)
+        {
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+        }
     }
 }

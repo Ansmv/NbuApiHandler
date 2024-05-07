@@ -1,5 +1,6 @@
 ﻿using CurrencyDataLibrary.ApiCommunication;
 using CurrencyDataLibrary.DataSaving;
+using CurrencyDataWorkerService.DataSaving;
 using CurrencyDataWorkerService.Settings;
 using Microsoft.Extensions.Options;
 
@@ -34,11 +35,10 @@ namespace CurrencyDataWorkerService.Extensions
 
         public static IServiceCollection AddDataSaver(this IServiceCollection services)
         {
-            services.AddSingleton<ISystemClock, SystemClock>();
-            services.AddSingleton<IFileNameGenerator, FileNameGenerator>();
-            services.AddSingleton<IPathHandler, PathHandler>();
-            services.AddSingleton<IDataSaver, NewFileDataSaver>();
-            //services.AddSingleton<IDataSaver, UpdateExistingFileDataSaver>();
+            services.AddSingleton<ISystemClock, SystemClock>()
+                .AddSingleton<IFileNameGenerator, FileNameGenerator>()
+                .AddSingleton<IPathHandler, PathHandler>()
+                .AddSingleton<IDataSaverFactory, DataSaverFactory>();
             return services;
         }
     }
