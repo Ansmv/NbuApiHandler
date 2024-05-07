@@ -18,10 +18,11 @@ namespace CurrencyDataLibrary.Tests
             var resultCsv = fileNameGenerator.GenerateFileName(".csv");
             var resultJson = fileNameGenerator.GenerateFileName(".json");
             var resultXml = fileNameGenerator.GenerateFileName(".xml");
-            Assert.AreEqual("2024-05-02_12-00-00_currency_data.csv", resultCsv);
-            Assert.AreEqual("2024-05-02_12-00-00_currency_data.json", resultJson);
-            Assert.AreEqual("2024-05-02_12-00-00_currency_data.xml", resultXml);
+            Assert.AreEqual("2024-05-02_12-00-00_csv_currency_data.csv", resultCsv);
+            Assert.AreEqual("2024-05-02_12-00-00_json_currency_data.json", resultJson);
+            Assert.AreEqual("2024-05-02_12-00-00_xml_currency_data.xml", resultXml);
         }
+
         [TestMethod]
         public void GenerateFileNameThrowsExceptionForUnknownFormat()
         {
