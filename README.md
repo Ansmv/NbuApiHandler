@@ -7,7 +7,7 @@ It retrieves prices every specified amount of seconds and saves it to the file i
 
 To install the Currency Data API Handler, follow these steps:
 
-0. Make sure you are using Windows and .NET Core 8 SDK is installed. If not, you could install it [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+0. Make sure you are using Windows and .NET Core 8 SDK is installed. If not, you could install it [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 1. Clone the repository to your local machine.
 2. Open the solution in your preferred development environment (e.g., Visual Studio).
 3. Build the solution to ensure all dependencies are resolved.
@@ -29,7 +29,7 @@ Should return the following message: `[SC] DeleteService SUCCESS`.
 The Currency Data API Handler uses a configuration file (`appsettings.json`) to customize its behavior. Here are the available configuration options:
 
 - **AppSettings**: General application settings.
-  - `DelayInSeconds`: The time, in seconds, between two calls to the api and therefore saving to the file are done
+  - `DelayInSeconds`: The time, in seconds, between two calls to the api and therefore saving to the file are done.
   - `DataFormat`: The desired format for saving the currency data (csv, json, xml).
   - `DataStoragePath`: You can chose both relative to the exe path as well as an absolute path.
 If the folder does not exist the app will create it if it has the rights.
