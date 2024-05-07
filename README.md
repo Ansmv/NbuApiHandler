@@ -1,13 +1,13 @@
 # Currency Data API Handler
 
-The Currency Data API Handler is a windows service designed to retrieve currency prices from a National Bank of Ukraine API (https://bank.gov.ua/en/open-data/api-dev). 
+The Currency Data API Handler is a windows service designed to retrieve currency prices from a [National Bank of Ukraine API](https://bank.gov.ua/en/open-data/api-dev). 
 It retrieves prices every specified amount of seconds and saves it to the file in a desired format (csv, xml or json).
 
 ## Installation
 
 To install the Currency Data API Handler, follow these steps:
 
-0. Make sure you are using Windows and .NET Core 8 SDK is installed. If not, you could install it here (https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+0. Make sure you are using Windows and .NET Core 8 SDK is installed. If not, you could install it [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 1. Clone the repository to your local machine.
 2. Open the solution in your preferred development environment (e.g., Visual Studio).
 3. Build the solution to ensure all dependencies are resolved.
