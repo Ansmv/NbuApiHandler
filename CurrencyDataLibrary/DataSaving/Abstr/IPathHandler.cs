@@ -1,4 +1,4 @@
-﻿namespace CurrencyDataLibrary.DataSaving
+﻿namespace CurrencyDataLibrary.DataSaving.Abstr
 {
     public interface IPathHandler
     {

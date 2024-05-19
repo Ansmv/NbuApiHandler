@@ -1,7 +1,8 @@
-﻿using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.DataSerialization.Abstr;
+using CurrencyDataLibrary.Models;
 using System.Text.Json;
 
-namespace CurrencyDataLibrary.DataSerialization
+namespace CurrencyDataLibrary.DataSerialization.Impl
 {
     public class JsonDataSerializer : IDataSerializer
     {

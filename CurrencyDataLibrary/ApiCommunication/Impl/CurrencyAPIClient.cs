@@ -1,7 +1,8 @@
-﻿using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.ApiCommunication.Abstr;
+using CurrencyDataLibrary.Models;
 using System.Diagnostics;
 
-namespace CurrencyDataLibrary.ApiCommunication
+namespace CurrencyDataLibrary.ApiCommunication.Impl
 {
     public class CurrencyAPIClient
     {

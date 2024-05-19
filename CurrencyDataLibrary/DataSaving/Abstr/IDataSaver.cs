@@ -1,6 +1,6 @@
 ﻿using CurrencyDataLibrary.Models;
 
-namespace CurrencyDataLibrary.DataSaving
+namespace CurrencyDataLibrary.DataSaving.Abstr
 {
     public interface IDataSaver
     {

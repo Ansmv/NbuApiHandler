@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
+﻿using CurrencyDataLibrary.ApiCommunication.Abstr;
+using System.Diagnostics;
 
-namespace CurrencyDataLibrary.ApiCommunication
+namespace CurrencyDataLibrary.ApiCommunication.Impl
 {
     public class JsonFetcher : IJsonFetcher
     {

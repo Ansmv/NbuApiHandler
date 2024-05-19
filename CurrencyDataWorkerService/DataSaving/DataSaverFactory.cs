@@ -1,4 +1,5 @@
-﻿using CurrencyDataLibrary.DataSaving;
+﻿using CurrencyDataLibrary.DataSaving.Abstr;
+using CurrencyDataLibrary.DataSaving.Impl;
 
 namespace CurrencyDataWorkerService.DataSaving
 {

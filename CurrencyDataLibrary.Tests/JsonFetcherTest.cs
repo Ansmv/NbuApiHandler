@@ -1,4 +1,4 @@
-﻿using CurrencyDataLibrary.ApiCommunication;
+﻿using CurrencyDataLibrary.ApiCommunication.Impl;
 using CurrencyDataLibrary.Tests.MockImplementations;
 
 namespace CurrencyDataLibrary.Tests

@@ -1,7 +1,10 @@
-﻿using CurrencyDataLibrary.DataSerialization;
+﻿using CurrencyDataLibrary.DataSaving.Abstr;
+using CurrencyDataLibrary.DataSerialization.Abstr;
+using CurrencyDataLibrary.DataSerialization.Impl;
 using CurrencyDataLibrary.Models;
+using System.Text;
 
-namespace CurrencyDataLibrary.DataSaving
+namespace CurrencyDataLibrary.DataSaving.Impl
 {
     public class UpdateExistingFileDataSaver : IDataSaver
     {
@@ -22,7 +25,7 @@ namespace CurrencyDataLibrary.DataSaving
             folderPath = Path.GetDirectoryName(fullPath);
             _pathHandler.EnsureDirectoryExists(folderPath);
             DeletePreviousFiles(folderPath);
-            File.WriteAllText(fullPath, serializedData);
+            File.WriteAllText(fullPath, serializedData, Encoding.Unicode);
         }
 
         private static void DeletePreviousFiles(string folderPath)

@@ -1,8 +1,9 @@
-﻿using CurrencyDataLibrary.Models;
+﻿using CurrencyDataLibrary.DataSerialization.Abstr;
+using CurrencyDataLibrary.Models;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace CurrencyDataLibrary.DataSerialization
+namespace CurrencyDataLibrary.DataSerialization.Impl
 {
     public class XmlDataSerializer : IDataSerializer
     {
@@ -17,7 +18,7 @@ namespace CurrencyDataLibrary.DataSerialization
             using var memoryStream = new MemoryStream();
             serializer.Serialize(memoryStream, currencyData);
             return Encoding.UTF8.GetString(memoryStream.ToArray());
-
         }
+
     }
 }

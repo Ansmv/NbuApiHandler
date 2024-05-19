@@ -1,6 +1,6 @@
 ﻿using CurrencyDataLibrary.Models;
 
-namespace CurrencyDataLibrary.DataSerialization
+namespace CurrencyDataLibrary.DataSerialization.Abstr
 {
     public interface IDataSerializer
     {

@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary.DataSaving
+﻿using CurrencyDataLibrary.DataSaving.Abstr;
+
+namespace CurrencyDataLibrary.DataSaving.Impl
 {
     public class SystemClock : ISystemClock
     {

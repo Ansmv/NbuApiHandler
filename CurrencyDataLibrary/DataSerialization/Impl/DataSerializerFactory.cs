@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary.DataSerialization
+﻿using CurrencyDataLibrary.DataSerialization.Abstr;
+
+namespace CurrencyDataLibrary.DataSerialization.Impl
 {
     public class DataSerializerFactory
     {

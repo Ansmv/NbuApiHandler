@@ -1,6 +1,7 @@
-﻿using System.Runtime.Caching;
+﻿using CurrencyDataLibrary.ApiCommunication.Abstr;
+using System.Runtime.Caching;
 
-namespace CurrencyDataLibrary.ApiCommunication
+namespace CurrencyDataLibrary.ApiCommunication.Impl
 {
     public class CacheManager<T> : ICacheManager<T>
     {

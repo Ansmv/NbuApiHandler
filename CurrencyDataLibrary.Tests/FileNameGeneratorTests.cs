@@ -1,4 +1,4 @@
-﻿using CurrencyDataLibrary.DataSaving;
+﻿using CurrencyDataLibrary.DataSaving.Abstr;
 using Moq;
 
 namespace CurrencyDataLibrary.Tests

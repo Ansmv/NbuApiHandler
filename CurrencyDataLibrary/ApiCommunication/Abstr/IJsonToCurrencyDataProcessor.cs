@@ -1,6 +1,6 @@
 ﻿using CurrencyDataLibrary.Models;
 
-namespace CurrencyDataLibrary.ApiCommunication
+namespace CurrencyDataLibrary.ApiCommunication.Abstr
 {
     public interface IJsonToCurrencyDataProcessor
     {

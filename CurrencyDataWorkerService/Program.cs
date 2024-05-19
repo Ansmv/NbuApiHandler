@@ -1,4 +1,5 @@
-using CurrencyDataLibrary.ApiCommunication;
+using CurrencyDataLibrary.ApiCommunication.Abstr;
+using CurrencyDataLibrary.ApiCommunication.Impl;
 using CurrencyDataWorkerService;
 using CurrencyDataWorkerService.Extensions;
 using CurrencyDataWorkerService.Settings;

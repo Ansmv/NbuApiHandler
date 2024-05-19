@@ -1,7 +1,10 @@
-﻿using CurrencyDataLibrary.DataSerialization;
+﻿using CurrencyDataLibrary.DataSaving.Abstr;
+using CurrencyDataLibrary.DataSerialization.Abstr;
+using CurrencyDataLibrary.DataSerialization.Impl;
 using CurrencyDataLibrary.Models;
+using System.Text;
 
-namespace CurrencyDataLibrary.DataSaving
+namespace CurrencyDataLibrary.DataSaving.Impl
 {
     public class NewFileDataSaver : IDataSaver
     {
@@ -21,7 +24,7 @@ namespace CurrencyDataLibrary.DataSaving
             string fullPath = _pathHandler.GetFullPath(folderPath, fileExtension);
             folderPath = Path.GetDirectoryName(fullPath);
             _pathHandler.EnsureDirectoryExists(folderPath);
-            File.WriteAllText(fullPath, serializedData);
+            File.WriteAllText(fullPath, serializedData, Encoding.Unicode);
         }
     }
 }

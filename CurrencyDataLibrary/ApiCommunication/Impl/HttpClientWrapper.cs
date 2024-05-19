@@ -1,4 +1,6 @@
-﻿namespace CurrencyDataLibrary.ApiCommunication
+﻿using CurrencyDataLibrary.ApiCommunication.Abstr;
+
+namespace CurrencyDataLibrary.ApiCommunication.Impl
 {
     public class HttpClientWrapper : IHttpClientWrapper
     {
