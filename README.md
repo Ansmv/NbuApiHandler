@@ -12,9 +12,10 @@ To install the Currency Data API Handler, follow these steps:
 3. Build the solution to ensure all dependencies are resolved.
 4. Optionally, configure the `appsettings.json` file according to your preferences.
 5. Open PowerShell with administrator rights, and add our service with the following command:  
-   `sc.exe create NbuHandler binpath= \PUT_YOUR_PATH_HERE\CurrencyDataWorkerService.exe start= auto`  
+   `sc.exe create NbuHandler binpath= \PUT_YOUR_FULL_PATH_HERE\CurrencyDataWorkerService.exe start= auto`  
+   **Note:** Ensure you use the **FULL** path.  
    Should return the following message: `[SC] CreateService SUCCESS`.
-6. Press Windows + R, type services.msc in Run dialog, and hit Enter key to open it. Find NbuHandler and click start.
+7. Press Windows + R, type services.msc in Run dialog, and hit Enter key to open it. Find NbuHandler and click start.
 
 ### Delete service
 
